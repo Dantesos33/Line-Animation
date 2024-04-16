@@ -76,8 +76,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            height: 100%;
-            width: 100%;
+            height: 100vh;
+            width: 100vw;
             text-align: center;
             overflow: hidden;
         }
@@ -91,7 +91,7 @@
 
 <body>
     <div class='line-container'>
-        <svg viewBox="0 0 2532 805" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 2532 805" fill="none" xmlns="http://www.w3.org/2000/svg" width="150%" height="150%">
             
                 <path
                 d="M2520.5 199.255C2467.67 174.755 2347.3 140.455 2288.5 199.255C2229.7 258.055 2105.67 223.755 2051 199.255C2017 174.755 1912.8 140.455 1768 199.255C1704 344.421 1553.3 618.955 1462.5 555.755C1371.7 492.555 1398 208.755 1422.5 74.7547C1313.17 163.421 1102.4 355.455 1134 414.255C1084.83 270.755 952.6 -7.14529 817 29.2547C681.4 65.6547 760.5 527.421 817 753.755C622.833 642.421 189.2 433.355 8 487.755"
@@ -120,16 +120,16 @@
 
     <script>
         let path = document.querySelector('path');
-        let pathLength = path.getTotalLength();
+let pathLength = path.getTotalLength();
 
-        path.style.strokeDasharray = pathLength + ' ' + pathLength;
-        path.style.strokeDashoffset = pathLength;
+path.style.strokeDasharray = pathLength + ' ' + pathLength;
+path.style.strokeDashoffset = pathLength;
 
-        window.addEventListener('scroll', () => {
-            let scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-            let drawLength = pathLength * scrollPercentage;
-            path.style.strokeDashoffset = pathLength - drawLength;
-        });
+window.addEventListener('scroll', () => {
+    let scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+    let drawLength = pathLength * scrollPercentage;
+    path.style.strokeDashoffset = pathLength - drawLength;
+});
 
     </script>
 </body>
