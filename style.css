@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space mono', monospace;
+    background-color: black;
+    color: white;
+    height: 500vh;
+}
+
+.heading {
+    font-size: 2rem;
+    color: white;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.line-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+svg {
+    display: inline-block;
+    height: 100%;
+}
+
+path {
+    transition: all 0.3s;
+}
+
+.profile-pic {
+    display: block;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    transition: all 1s;
+    animation: morph 3s linear infinite;
+}
+
+@keyframes morph {
+
+    0%,
+    100% {
+        border-radius: 55% 45% 51% 49% / 53% 21% 79% 47%;
+    }
+
+    20% {
+        border-radius: 79% 21% 79% 21% / 38% 33% 67% 62%;
+    }
+
+    40% {
+        border-radius: 70% 30% 78% 22% / 54% 46% 54% 46%;
+    }
+
+    60% {
+        border-radius: 85% 15% 36% 64% / 33% 5% 95% 67%;
+    }
+
+
+}
